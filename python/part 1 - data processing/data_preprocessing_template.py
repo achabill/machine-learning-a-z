@@ -24,3 +24,7 @@ one_hot_encoder = OneHotEncoder(categorical_features = [0])
 X = one_hot_encoder.fit_transform(X).toarray()
 label_encoder_y = LabelEncoder()
 y = label_encoder_y.fit_transform(y)
+
+# Splitting the dataset into the Training set and Test set
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state = 0)
